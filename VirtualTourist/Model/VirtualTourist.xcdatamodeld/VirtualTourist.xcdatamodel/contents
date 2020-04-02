@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MapLocations" representedClassName="MapLocations" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="coordinates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoAlbums" inverseName="photosFromCoordinates" inverseEntity="PhotoAlbums"/>
+    </entity>
+    <entity name="PhotoAlbums" representedClassName="PhotoAlbums" syncable="YES" codeGenerationType="class">
+        <attribute name="photos" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="photosFromCoordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MapLocations" inverseName="coordinates" inverseEntity="MapLocations"/>
+    </entity>
+    <elements>
+        <element name="MapLocations" positionX="-45" positionY="0" width="128" height="88"/>
+        <element name="PhotoAlbums" positionX="164.53125" positionY="-0.109375" width="128" height="73"/>
+    </elements>
+</model>
